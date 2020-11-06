@@ -11,15 +11,14 @@ class Account:
 
     def deposit(self, amount):
         self._balance += amount
-        return True
+        return False
 
     def withdraw(self, amount):
         if self._balance > amount:
             self._balance -= amount
             return True
-        else:
-            return False
 
     def transfer(self, account, amount):
-        account.withdraw(amount)
-        self.deposit(amount)
+        if (account.withdraw(amount)):
+            self.deposit(amount)
+            return True
