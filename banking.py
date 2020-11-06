@@ -11,7 +11,7 @@ class Account:
 
     def deposit(self, amount):
         self._balance += amount
-        return False
+        return True
 
     def withdraw(self, amount):
         if self._balance > amount:
