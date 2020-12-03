@@ -29,8 +29,4 @@ class TestAccount:
     def test_transfer(self):
         self.account1.deposit(150)
         self.account1.transfer(self.account2, 50)
-<<<<<<< HEAD
         assert self.account2.check_balance() == 151
-=======
-        assert self.account2.check_balance() == 150
->>>>>>> 2ff221c98ad6a526aff377b3c2016e4929f02c1a
