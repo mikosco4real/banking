@@ -2,13 +2,19 @@ pipeline{
     agent any
     stages{
         stage('Build'){
-            sh 'lsb_release'
+            steps{
+                sh 'lsb_release'
+            }
         }
         stage('Test'){
-            sh 'pwd'
+            steps{
+                sh 'pwd'
+            }
         }
         stage('Deploy'){
-            sh 'ls'
+            steps{
+                sh 'ls'
+            }
         }
     }
 }
