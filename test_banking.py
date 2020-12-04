@@ -24,9 +24,9 @@ class TestAccount:
         assert self.account1.check_balance() == 50
 
     def test_withdraw_limit(self):
-        assert self.account1.withdraw(250) == True
+        assert self.account1.withdraw(250) == False
 
     def test_transfer(self):
         self.account1.deposit(150)
         self.account1.transfer(self.account2, 50)
-        assert self.account2.check_balance() == 151
+        assert self.account2.check_balance() == 50

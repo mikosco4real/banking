@@ -3,17 +3,19 @@ pipeline{
     stages{
         stage('Build'){
             steps{
-                sh 'lsb_release'
+                sh 'apt update && apt upgrade -y'
+                sh 'apt install python3 python3-pip -y'
+                sh 'pip3 install -r requirements.txt'
             }
         }
         stage('Test'){
             steps{
-                sh 'pwd'
+                sh 'pytest'
             }
         }
         stage('Deploy'){
             steps{
-                sh 'ls'
+                sh 'python3 banking.py'
             }
         }
     }
